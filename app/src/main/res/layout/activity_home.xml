@@ -12,16 +12,6 @@
     tools:context=".Home">
 
 
-    <TextView
-        android:text="Some wonderful caption here :)"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="18dp"
-        android:id="@+id/textView2"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:textColor="#008000" />
-
     <ImageView
         android:layout_width="150dp"
         android:layout_height="150dp"
@@ -68,6 +58,20 @@
         android:layout_alignBottom="@+id/textView14"
         android:layout_alignRight="@+id/imageView2"
         android:layout_alignEnd="@+id/imageView2" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="54dp"
+        android:layout_marginRight="54dp"
+        android:layout_marginBottom="36dp"
+        android:clickable="true"
+
+        app:srcCompat="@drawable/sos" />
 
 
 </RelativeLayout>
