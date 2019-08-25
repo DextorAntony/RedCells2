@@ -54,6 +54,7 @@ public class Search extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 int pos = parent.getPositionForView(view);
                 String na = mylist.get(pos * 3);
+
                 String pan = mylist.get((pos * 3) + 2);
                 final String ph = mylist.get((pos * 3) + 1);
                 phone2=ph;

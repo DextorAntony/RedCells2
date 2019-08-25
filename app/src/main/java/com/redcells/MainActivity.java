@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
                 String name1 = name.getText().toString();
                 String mobile1 = mobile.getText().toString();
                 String blood1 = blood.getSelectedItem().toString();
-                String combo = name1 + "," + mobile1 + "," + dob + "," + location;
+                String combo = name1 + "," + mobile1 + "," + location + "," + dob;
 
                 if (blood1.equals("") || mobile1.equals("") || location.equals("Tap to detect") ) {
                     Toast.makeText(MainActivity.this, "Please fill all the details.", Toast.LENGTH_SHORT).show();
