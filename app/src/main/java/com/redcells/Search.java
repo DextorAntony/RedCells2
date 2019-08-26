@@ -46,7 +46,7 @@ public class Search extends AppCompatActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
 
         DatabaseReference mRef = database.getReference("users/"+bloodgroup);
-        resultview = (ListView) findViewById(R.id.listview);
+        resultview = findViewById(R.id.listview);
         final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, result);
         resultview.setAdapter(arrayAdapter);
         resultview.setOnItemClickListener(new android.widget.AdapterView.OnItemClickListener() {
@@ -68,18 +68,18 @@ public class Search extends AppCompatActivity {
                 dialog.setContentView(R.layout.details);
                 dialog.setTitle("Call Donor");
                 //adding text dynamically
-                TextView t1 = (TextView) dialog.findViewById(R.id.textView5);
-                TextView t2 = (TextView) dialog.findViewById(R.id.textView6);
-                TextView t3 = (TextView) dialog.findViewById(R.id.textView7);
-                TextView t4 = (TextView) dialog.findViewById(R.id.textView8);
+                TextView t1 = dialog.findViewById(R.id.textView5);
+                TextView t2 = dialog.findViewById(R.id.textView6);
+                TextView t3 = dialog.findViewById(R.id.textView7);
+                TextView t4 = dialog.findViewById(R.id.textView8);
 
                 t1.setText(na);
                 t2.setText("Blood Type : "+bloodgroup);
                 t3.setText("Phone : " + ph);
                 t4.setText("Locality: " + pan);
                 //adding button click event
-                Button call = (Button) dialog.findViewById(R.id.callbutt);
-                Button cancel = (Button) dialog.findViewById(R.id.cancelbutt);
+                Button call = dialog.findViewById(R.id.callbutt);
+                Button cancel = dialog.findViewById(R.id.cancelbutt);
                 call.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

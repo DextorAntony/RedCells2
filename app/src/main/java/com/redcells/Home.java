@@ -14,8 +14,8 @@ public class Home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        ImageView add=(ImageView) findViewById(R.id.imageView);
-        ImageView search=(ImageView) findViewById(R.id.imageView2);
+        ImageView add= findViewById(R.id.imageView);
+        ImageView search= findViewById(R.id.imageView2);
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -44,12 +44,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mFirebaseInstance = FirebaseDatabase.getInstance();
 
-        // get reference to 'users' node
+
+
         mFirebaseDatabase = mFirebaseInstance.getReference();
-        final EditText name = (EditText) findViewById(R.id.editText);
-        final EditText mobile = (EditText) findViewById(R.id.editText3);
-        newb = (Button) findViewById(R.id.button2);
-        final Spinner blood = (Spinner) findViewById(R.id.spinner);
+        final EditText name = findViewById(R.id.editText);
+        final EditText mobile = findViewById(R.id.editText3);
+        newb = findViewById(R.id.button2);
+        final Spinner blood = findViewById(R.id.spinner);
 
 
 
@@ -68,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
                 String blood1 = blood.getSelectedItem().toString();
                 String combo = name1 + "," + mobile1 + "," + location + "," + dob;
 
-                if (blood1.equals("") || mobile1.equals("") || location.equals("Tap to detect") ) {
+                if (blood1.equals("") || mobile1.equals("") || location.equals("Tap to detect") || dob.equals("") ) {
                     Toast.makeText(MainActivity.this, "Please fill all the details.", Toast.LENGTH_SHORT).show();
                 } else {
                     mFirebaseDatabase.child("users").child(blood1).child(mobile1).setValue(combo);
@@ -114,13 +115,6 @@ public class MainActivity extends AppCompatActivity {
                 if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
                     if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                        // TODO: Consider calling
-                        //    ActivityCompat#requestPermissions
-                        // here to request the missing permissions, and then overriding
-                        //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                        //                                          int[] grantResults)
-                        // to handle the case where the user grants the permission. See the documentation
-                        // for ActivityCompat#requestPermissions for more details.
                         return;
                     }
                     assert locationManager != null;

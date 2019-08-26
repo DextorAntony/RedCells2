@@ -31,8 +31,8 @@ private TextView p;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_searchview);
-        Button srch=(Button) findViewById(R.id.button3);
-        final Spinner blood=(Spinner) findViewById(R.id.spinner3);
+        Button srch= findViewById(R.id.button3);
+        final Spinner blood= findViewById(R.id.spinner3);
         final TextView p=findViewById(R.id.spinner4);
 
             srch.setOnClickListener(new View.OnClickListener() {
