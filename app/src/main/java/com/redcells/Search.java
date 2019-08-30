@@ -35,7 +35,6 @@ public class Search extends AppCompatActivity {
     private ArrayList<String> mylist=new ArrayList<>();
     public int flag=1;
     public String phone2;
-    private ListView resultview;
     private static final int PERMS_REQUEST_CODE = 123;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +45,7 @@ public class Search extends AppCompatActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
 
         DatabaseReference mRef = database.getReference("users/"+bloodgroup);
-        resultview = findViewById(R.id.listview);
+        ListView resultview = findViewById(R.id.listview);
         final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, result);
         resultview.setAdapter(arrayAdapter);
         resultview.setOnItemClickListener(new android.widget.AdapterView.OnItemClickListener() {
@@ -113,7 +112,7 @@ public class Search extends AppCompatActivity {
 
         mRef.addChildEventListener(new ChildEventListener() {
             @Override
-            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, String s) {
                 if(dataSnapshot.getValue()==null)
                 {
                     Toast.makeText(Search.this,"No users found", Toast.LENGTH_SHORT).show();
@@ -121,6 +120,7 @@ public class Search extends AppCompatActivity {
 
                 }
                 String value = dataSnapshot.getValue(String.class);
+                assert value != null;
                 String[] val = value.split(",");
 
                 if (val[2].equals(pancht)) {
@@ -135,22 +135,22 @@ public class Search extends AppCompatActivity {
             }
 
             @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, String s) {
 
             }
 
             @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {
+            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
 
             }
 
             @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, String s) {
 
             }
 
             @Override
-            public void onCancelled(DatabaseError databaseError) {
+            public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
         });
@@ -182,19 +182,13 @@ public class Search extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         boolean allowed = true;
 
-        switch (requestCode){
-            case PERMS_REQUEST_CODE:
-
-                for (int res : grantResults){
-                    // if user granted all permissions.
-                    allowed = allowed && (res == PackageManager.PERMISSION_GRANTED);
-                }
-
-                break;
-            default:
-                // if user not granted permissions.
-                allowed = false;
-                break;
+        if (requestCode == PERMS_REQUEST_CODE) {
+            for (int res : grantResults) {
+                // if user granted all permissions.
+                allowed = allowed && (res == PackageManager.PERMISSION_GRANTED);
+            }
+        } else {// if user not granted permissions.
+            allowed = false;
         }
 
         if (allowed){
