@@ -4,7 +4,6 @@ package com.redcells;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,8 +12,8 @@ import java.util.TimerTask;
 
 
 public class Intro extends AppCompatActivity {
-    Timer timer;
-    TimerTask timerTask;
+    private Timer timer;
+    private TimerTask timerTask;
     final Handler handler = new Handler();
 
     @Override
@@ -29,7 +28,7 @@ public class Intro extends AppCompatActivity {
 
         startTimer();
     }
-    public void startTimer() {
+    private void startTimer() {
 
         timer = new Timer();
 
@@ -38,7 +37,7 @@ public class Intro extends AppCompatActivity {
         timer.schedule(timerTask, 3000, 10000); //
     }
 
-    public void stoptimertask(View v) {
+    public void stoptimertask() {
 
 
 
@@ -51,7 +50,7 @@ public class Intro extends AppCompatActivity {
         }
 
     }
-    public void initializeTimerTask() {
+    private void initializeTimerTask() {
 
         timerTask = new TimerTask() {
             public void run() {

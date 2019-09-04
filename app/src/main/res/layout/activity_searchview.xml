@@ -93,8 +93,8 @@
         android:layout_marginBottom="-13dp"
         android:drawableEnd="@drawable/ic_gps_fixed_black_24dp"
         android:drawableRight="@drawable/ic_gps_fixed_black_24dp"
-        android:text="Enter your city"
-        android:textColor="@android:color/black"
+        android:hint="Enter you city"
+        android:textColorHint="@android:color/black"
         android:textSize="14sp" />
 
     <Button

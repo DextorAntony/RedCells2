@@ -31,10 +31,10 @@ import java.util.ArrayList;
 
 public class Search extends AppCompatActivity {
 
-    private ArrayList<String> result=new ArrayList<>();
-    private ArrayList<String> mylist=new ArrayList<>();
-    public int flag=1;
-    public String phone2;
+    private final ArrayList<String> result=new ArrayList<>();
+    private final ArrayList<String> mylist=new ArrayList<>();
+    private int flag=1;
+    private String phone2;
     private static final int PERMS_REQUEST_CODE = 123;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +46,7 @@ public class Search extends AppCompatActivity {
 
         DatabaseReference mRef = database.getReference("users/"+bloodgroup);
         ListView resultview = findViewById(R.id.listview);
-        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, result);
+        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, result);
         resultview.setAdapter(arrayAdapter);
         resultview.setOnItemClickListener(new android.widget.AdapterView.OnItemClickListener() {
             @Override
