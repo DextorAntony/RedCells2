@@ -54,15 +54,18 @@
 
     <TextView
 
-        android:text="Name : "
+        android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView9"
         android:layout_alignBaseline="@+id/editText"
         android:layout_alignBottom="@+id/editText"
+        android:layout_marginEnd="23dp"
 
+        android:layout_marginRight="23dp"
+        android:layout_marginBottom="11dp"
         android:layout_toStartOf="@+id/button2"
-        android:layout_toLeftOf="@+id/button2" />
+        android:layout_toLeftOf="@+id/button2"
+        android:text="Name : " />
 
     <EditText
         android:id="@+id/editText3"
@@ -153,38 +156,12 @@
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/agee"
+        android:layout_below="@+id/textView18"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="41dp"
+        android:layout_marginTop="78dp"
         android:background="#f31c45"
         android:text="ADD"
         android:textColor="#fff" />
-
-    <TextView
-        android:id="@+id/age"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/agee"
-        android:layout_alignStart="@+id/textView4"
-        android:layout_alignLeft="@+id/textView4"
-        android:layout_alignBottom="@+id/agee"
-        android:layout_marginStart="22dp"
-        android:layout_marginLeft="22dp"
-        android:layout_marginBottom="10dp"
-        android:text="D.O.B:" />
-
-    <EditText
-        android:id="@+id/agee"
-        android:layout_width="177dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView4"
-
-        android:layout_alignStart="@+id/textView18"
-        android:layout_alignLeft="@+id/textView18"
-        android:layout_marginTop="11dp"
-        android:ems="10"
-        android:inputType="date"
-        android:textAppearance="@style/TextAppearance.AppCompat" />
 
 
 </RelativeLayout>

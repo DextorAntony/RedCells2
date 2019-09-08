@@ -1,77 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context="com.redcells.OTP">
+
     <TextView
-        android:layout_width="match_parent"
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20dp"
-        android:padding="10dp"
+        android:layout_marginTop="8dp"
+        android:text="Verify your phone number"
+        android:textAlignment="center"
+        android:textColor="#4CAF50"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/tv"
-
-        android:text="WhatsApp will send you an SMS message containing a code you will use to verify your number."/>
-    <Spinner
-        android:layout_above="@+id/phnum"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-
-        />
+        android:padding="10dp"
+        android:text="RedCells will send an SMS message to verify your mobile number. Enter your county code and phone number:"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
     <EditText
+        android:id="@+id/otpd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/otpd"
+        android:layout_marginTop="36dp"
         android:inputType="number"
-        android:layout_below="@id/phnum"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/phnum" />
 
     <EditText
         android:id="@+id/code"
-        android:layout_width="70dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
 
-        android:hint="91"
+        android:layout_marginStart="32dp"
+
+
+        android:layout_marginTop="36dp"
+        android:hint="+ 91"
         android:inputType="number"
-
-
         android:maxLength="2"
         android:nextFocusLeft="@id/phnum"
         android:nextFocusUp="@id/phnum"
         android:nextFocusDown="@id/phnum"
-        android:nextFocusForward="@id/phnum" />
+        android:nextFocusForward="@id/phnum"
+        app:layout_constraintEnd_toStartOf="@+id/phnum"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv" />
 
     <EditText
-        android:inputType="number"
         android:id="@+id/phnum"
-        android:layout_marginEnd="20dp"
-        android:layout_width="227dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="32dp"
+        android:hint="Mobile Number"
+        android:inputType="number"
         android:maxLength="10"
-        android:hint="Mobile Number" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/code"
+        app:layout_constraintTop_toBottomOf="@+id/tv" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
         android:id="@+id/send"
-        android:text="Send Otp" />
+        android:layout_width="88dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:layout_marginEnd="150dp"
+
+        android:layout_marginBottom="24dp"
+        android:background="#6BE470"
+        android:text="Send Otp"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <TextView
+        android:id="@+id/t"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
 
-        android:text="Carrier charges may apply"
-        android:layout_marginTop="10dp"
-        android:layout_below="@id/otpd"
         android:layout_marginStart="10dp"
-        android:id="@+id/t"
-        android:textSize="15dp"/>
+        android:layout_marginTop="10dp"
+        android:text="Carrier charges may apply"
+        android:textColor="@android:color/black"
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/otpd" />
 
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

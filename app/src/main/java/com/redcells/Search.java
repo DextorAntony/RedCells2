@@ -18,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
@@ -40,6 +41,10 @@ public class Search extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
+        ActionBar actionbar = getSupportActionBar();
+        assert actionbar != null;
+        actionbar.hide();
+
         final String bloodgroup=getIntent().getStringExtra("bt");
         final String pancht=getIntent().getStringExtra("pa");
         FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -160,7 +165,7 @@ public class Search extends AppCompatActivity {
     }
     private boolean hasPermissions(){
         int res = 0;
-        //string array of permissions,
+
         String[] permissions = new String[]{Manifest.permission.CALL_PHONE};
 
         for (String perms : permissions){
@@ -184,15 +189,15 @@ public class Search extends AppCompatActivity {
 
         if (requestCode == PERMS_REQUEST_CODE) {
             for (int res : grantResults) {
-                // if user granted all permissions.
+
                 allowed = allowed && (res == PackageManager.PERMISSION_GRANTED);
             }
-        } else {// if user not granted permissions.
+        } else {
             allowed = false;
         }
 
         if (allowed){
-            //user granted all permissions we can perform our task.
+
             Intent callIntent = new Intent(Intent.ACTION_CALL);
             callIntent.setData(Uri.parse("tel:"+phone2));
 

@@ -3,12 +3,23 @@ package com.redcells;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class Home extends AppCompatActivity {
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+        finishAffinity();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,5 +39,39 @@ public class Home extends AppCompatActivity {
                 startActivity(new Intent(Home.this,searchview.class));
             }
         });
+
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId())
+        {
+            case R.id.signout:
+                so();
+                break;
+
+            case R.id.pp:
+
+                break;
+
+
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
+    public void so(){
+        FirebaseAuth.getInstance().signOut();
+        Intent intent = new Intent(getApplicationContext(), OTP.class);
+
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);//makesure user cant go back
+        startActivity(intent);
+
+
+
     }
 }
