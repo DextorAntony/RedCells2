@@ -59,7 +59,7 @@ public class Search extends AppCompatActivity {
                 phone2=ph;
                 String item = Integer.toString(pos);
 
-                Toast.makeText(Search.this, "Phone : " + phone2 + " Locality: " + pan, Toast.LENGTH_SHORT).show();
+                Toast.makeText(Search.this, "Phone : " + phone2 + " City: " + pan, Toast.LENGTH_SHORT).show();
                 final Dialog dialog = new Dialog(Search.this);
 
 
@@ -75,7 +75,7 @@ public class Search extends AppCompatActivity {
                 t1.setText(na);
                 t2.setText("Blood Type : "+bloodgroup);
                 t3.setText("Phone : " + ph);
-                t4.setText("Locality: " + pan);
+                t4.setText("Location: " + pan);
                 //adding button click event
                 Button call = dialog.findViewById(R.id.callbutt);
                 Button cancel = dialog.findViewById(R.id.cancelbutt);

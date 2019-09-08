@@ -19,7 +19,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="18dp"
-        android:text="-------------------------------"
+        android:text="NOTE: Details will be displayed publicly."
         android:textColor="#008000" />
 
     <ImageView
@@ -34,7 +34,8 @@
         android:layout_marginTop="15dp"
         app:srcCompat="@drawable/user"
         android:layout_marginLeft="-9dp"
-        android:layout_alignParentLeft="true" />
+        android:layout_alignParentLeft="true"
+        android:contentDescription="@null" />
 
     <EditText
         android:id="@+id/editText"
@@ -122,7 +123,7 @@
 
         android:layout_below="@+id/spinner"
         android:layout_marginTop="25dp"
-        android:text="Locality:"
+        android:text="Location:"
         android:layout_alignRight="@+id/textView" />
 
     <AutoCompleteTextView
@@ -167,6 +168,9 @@
         android:layout_alignStart="@+id/textView4"
         android:layout_alignLeft="@+id/textView4"
         android:layout_alignBottom="@+id/agee"
+        android:layout_marginStart="22dp"
+        android:layout_marginLeft="22dp"
+        android:layout_marginBottom="10dp"
         android:text="D.O.B:" />
 
     <EditText
