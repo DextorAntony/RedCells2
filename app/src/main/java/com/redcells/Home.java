@@ -74,4 +74,10 @@ public class Home extends AppCompatActivity {
 
 
     }
+
+    public void policy(MenuItem item) {
+
+        Intent i = new Intent(getApplicationContext(),policy.class);
+        startActivity(i);
+    }
 }
