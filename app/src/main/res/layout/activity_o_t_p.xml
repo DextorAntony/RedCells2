@@ -16,7 +16,7 @@
         android:layout_marginTop="8dp"
         android:text="Verify your phone number"
         android:textAlignment="center"
-        android:textColor="#4CAF50"
+        android:textColor="#3F51B5"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,6 +40,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
+        android:hint="Awaiting OTP..."
         android:inputType="number"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/phnum" />
@@ -87,7 +88,7 @@
         android:layout_marginEnd="150dp"
 
         android:layout_marginBottom="24dp"
-        android:background="#6BE470"
+        android:background="#3F51B5"
         android:text="Send Otp"
         android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
