@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Home extends AppCompatActivity {
-
+ImageButton imageButton;
     @Override
     public void onBackPressed() {
         super.onBackPressed();
@@ -26,6 +27,14 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         ImageView add= findViewById(R.id.imageView);
+        imageButton = findViewById(R.id.imageButton);
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(),MainActivity2.class);
+                startActivity(i);
+            }
+        });
         ImageView search= findViewById(R.id.imageView2);
         add.setOnClickListener(new View.OnClickListener() {
             @Override
