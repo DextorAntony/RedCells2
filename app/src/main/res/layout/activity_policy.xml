@@ -16,8 +16,7 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="50dp"
             android:layout_marginEnd="24dp"
-            android:text="@string/textview"
-            >
+            android:text="@string/textview">
 
         </TextView>
     </ScrollView>

@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                 String blood1 = blood.getSelectedItem().toString();
                 String combo = name1 + "," + mobile1 + "," + location ;
 
-                if (blood1.equals("") || mobile1.equals("") || location.equals("") ) {
+                if (blood1.equals("") || mobile1.equals("") || location.equals("") || mobile1.length()<10) {
 
                     Toast.makeText(MainActivity.this, "Please fill all the details.", Toast.LENGTH_SHORT).show();
                 }
@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                     Toast.makeText(MainActivity.this, "Donor Added", Toast.LENGTH_SHORT).show();
-                    Intent home = new Intent(MainActivity.this, Home.class);
+                    Intent home = new Intent(MainActivity.this, MainActivity2.class);
                     startActivity(home);
                     finish();
                 }

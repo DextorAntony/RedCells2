@@ -10,28 +10,30 @@
 
     <application
         android:allowBackup="true"
+        android:fullBackupContent="@xml/backup_descriptor"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:fullBackupContent="@xml/backup_descriptor">
+        android:theme="@style/AppTheme">
+
         <activity android:name=".policy" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".Home">
+        <activity android:name=".splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".OTP" />
+        <activity android:name=".Home" />
         <activity android:name=".Search" />
         <activity android:name=".searchview" />
         <activity android:name=".MainActivity2" />
         <activity
             android:name=".NewsDetailActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".OTP" />
     </application>
 
 </manifest>

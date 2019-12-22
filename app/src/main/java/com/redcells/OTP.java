@@ -79,11 +79,17 @@ public class OTP extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String number = otp.getText().toString().trim();
-                if ((number.isEmpty()) || number.length() < 10) {
+                String cc = code.getText().toString().trim();
+                if ((number.isEmpty()) || number.length() < 10  ) {
                     otp.setError("Valid number is required");
                     otp.requestFocus();
                     return;
 
+                }
+                else if(cc.isEmpty() || cc.length()<2){
+                    code.setError("Vaild Code required");
+                    code.requestFocus();
+                    return;
                 }
 
                 final String phoneNumber = "+" + "91" + number;
