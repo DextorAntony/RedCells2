@@ -3,9 +3,7 @@ package com.redcells;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
-
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -17,7 +15,9 @@ import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.app.ActivityOptionsCompat;
 import androidx.core.util.Pair;
 import androidx.core.view.ViewCompat;
@@ -26,6 +26,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.redcells.api.ApiClient;
 import com.redcells.api.ApiInterface;
 import com.redcells.models.Article;
@@ -42,7 +43,6 @@ public class MainActivity2 extends AppCompatActivity implements  SwipeRefreshLay
 
     public static final String API_KEY = "e3eb00e5f12847e19524191b4e9ca54a";
     private RecyclerView recyclerView;
-    private RecyclerView.LayoutManager layoutManager;
     private List<Article> articles = new ArrayList<>();
     private Adapter adapter;
     private String TAG = MainActivity2.class.getSimpleName();
@@ -52,19 +52,30 @@ public class MainActivity2 extends AppCompatActivity implements  SwipeRefreshLay
     private ImageView errorImage;
     private TextView errorTitle, errorMessage;
     private Button btnRetry;
+    CoordinatorLayout coordinatorLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+        coordinatorLayout=findViewById(R.id.cl);
+        Snackbar.make(coordinatorLayout, "FYI: Ad contents owned by 3rd party APIs, I have no control over them.", Snackbar.LENGTH_LONG)
+                .setAction("Ok", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
 
+                    }
+                })
+                .setDuration(10000)
+                .setActionTextColor(getResources().getColor(R.color.colorAccent))
+                .show();
         swipeRefreshLayout = findViewById(R.id.swipe_refresh_layout);
         swipeRefreshLayout.setOnRefreshListener(this);
         swipeRefreshLayout.setColorSchemeResources(R.color.colorAccent);
 
         topHeadline = findViewById(R.id.topheadelines);
         recyclerView = findViewById(R.id.recyclerView);
-        layoutManager = new LinearLayoutManager(MainActivity2.this);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(MainActivity2.this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setNestedScrollingEnabled(false);
@@ -99,7 +110,8 @@ public class MainActivity2 extends AppCompatActivity implements  SwipeRefreshLay
 
         call.enqueue(new Callback<News>() {
             @Override
-            public void onResponse(Call<News> call, Response<News> response) {
+            public void onResponse(@NonNull Call<News> call, @NonNull Response<News> response) {
+                assert response.body() != null;
                 if (response.isSuccessful() && response.body().getArticle() != null){
 
                     if (!articles.isEmpty()){
@@ -145,7 +157,7 @@ public class MainActivity2 extends AppCompatActivity implements  SwipeRefreshLay
             }
 
             @Override
-            public void onFailure(Call<News> call, Throwable t) {
+            public void onFailure(@NonNull Call<News> call, @NonNull Throwable t) {
                 topHeadline.setVisibility(View.INVISIBLE);
                 swipeRefreshLayout.setRefreshing(false);
                 showErrorMessage(
@@ -183,11 +195,7 @@ public class MainActivity2 extends AppCompatActivity implements  SwipeRefreshLay
                 );
 
 
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                    startActivity(intent, optionsCompat.toBundle());
-                }else {
-                    startActivity(intent);
-                }
+                startActivity(intent, optionsCompat.toBundle());
 
             }
         });

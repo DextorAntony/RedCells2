@@ -2,6 +2,7 @@ package com.redcells;
 
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -54,6 +55,7 @@ public class Search extends AppCompatActivity {
         final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, result);
         resultview.setAdapter(arrayAdapter);
         resultview.setOnItemClickListener(new android.widget.AdapterView.OnItemClickListener() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 int pos = parent.getPositionForView(view);

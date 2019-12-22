@@ -8,13 +8,16 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Home extends AppCompatActivity {
 ImageButton imageButton;
+RelativeLayout coordinatorLayout;
     @Override
     public void onBackPressed() {
         super.onBackPressed();
@@ -26,6 +29,21 @@ ImageButton imageButton;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        coordinatorLayout=findViewById(R.id.activity_home);
+
+        Snackbar.make(coordinatorLayout, "Click LIVE & Check out the latest news from India and around the world.", Snackbar.LENGTH_LONG)
+                .setAction("Ok", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                    }
+                })
+                .setDuration(10000)
+                .setActionTextColor(getResources().getColor(R.color.colorAccent))
+                .show();
+
+
         ImageView add= findViewById(R.id.imageView);
         imageButton = findViewById(R.id.imageButton);
         imageButton.setOnClickListener(new View.OnClickListener() {

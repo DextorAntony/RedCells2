@@ -1,5 +1,6 @@
 package com.redcells;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 
@@ -46,6 +47,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder>{
         return new MyViewHolder(view, onItemClickListener);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holders, int position) {
         final MyViewHolder holder = holders;
@@ -98,14 +100,14 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder>{
         void onItemClick(View view, int position);
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder implements  View.OnClickListener {
+    public static class MyViewHolder extends RecyclerView.ViewHolder implements  View.OnClickListener {
 
         TextView title, desc, author, published_ad, source, time;
         ImageView imageView;
         ProgressBar progressBar;
         OnItemClickListener onItemClickListener;
 
-        public MyViewHolder(View itemView, OnItemClickListener onItemClickListener) {
+        MyViewHolder(View itemView, OnItemClickListener onItemClickListener) {
 
             super(itemView);
 

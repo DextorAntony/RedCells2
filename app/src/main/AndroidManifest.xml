@@ -14,8 +14,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".policy"></activity>
+        android:theme="@style/AppTheme"
+        android:fullBackupContent="@xml/backup_descriptor">
+        <activity android:name=".policy" />
         <activity android:name=".MainActivity" />
         <activity android:name=".Home">
             <intent-filter>
@@ -27,9 +28,10 @@
         <activity android:name=".OTP" />
         <activity android:name=".Search" />
         <activity android:name=".searchview" />
-        <activity android:name=".MainActivity2" /><activity
-        android:name=".NewsDetailActivity"
-        android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".MainActivity2" />
+        <activity
+            android:name=".NewsDetailActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

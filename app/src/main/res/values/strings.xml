@@ -1,5 +1,53 @@
 <resources>
     <string name="app_name">RedCells</string>
+    <string name="ji">NOTE: Information displayed should be used only for reasonable purposes.</string>
+    <string name="a_time_ago">a time ago</string>
+    <string name="title_of_news">Title of News</string>
+    <string name="awaiting_otp">Awaiting OTP…</string>
+    <string name="_91">+ 91</string>
+    <string name="send_otp">Send Otp</string>
+    <string name="carrier_charges_may_apply">Carrier charges may apply</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="redcells_will_send_an_sms_message_to_verify_your_mobile_number_enter_your_county_code_and_phone_number">RedCells will send an SMS message to verify your mobile number. Enter your county code and phone number:</string>
+    <string name="verify_your_phone_number">Verify your phone number</string>
+    <string name="todo">TODO</string>
+    <string name="new_donor">New Donor</string>
+    <string name="donor_search">Donor Search</string>
+    <string name="search_donor">Search Donor</string>
+    <string name="blood_group">Blood Group:</string>
+    <string name="enter_you_city">Enter you city</string>
+    <string name="error_title">Error Title</string>
+    <string name="error_message">Error Message</string>
+    <string name="retry">Retry</string>
+    <string name="author">Author</string>
+    <string name="title">Title</string>
+    <string name="desc">Desc</string>
+    <string name="source">Source</string>
+    <string name="time">Time</string>
+    <string name="note_details_will_be_displayed_publicly">NOTE: Details will be displayed publicly.</string>
+    <string name="name">Name :</string>
+    <string name="mobile">Mobile :</string>
+    <string name="blood_type">Blood Type:</string>
+    <string name="location">Location:</string>
+    <string name="enter_your_city">Enter your city</string>
+    <string name="add">ADD</string>
+    <string name="_01_january_1990">01 January 1990</string>
+    <string name="news_for_you">News for you</string>
+    <string name="subtitle">Subtitle</string>
+    <string name="search_result">Search Result</string>
+    <string name="blood_type_0">Blood Type : 0+</string>
+    <string name="phone_999999999">Phone : 999999999</string>
+    <string name="mr_wayne">Mr. Wayne</string>
+    <string name="call">CALL</string>
+    <string name="cancel">Cancel</string>
+    <string name="top_headlines">Top Headlines</string>
+    <string name="textview">TextView</string>
+    <string name="sign_out">Sign out</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="search">Search</string>
+    <string name="settings">Settings</string>
+    <string name="share">Share</string>
+    <string name="open_with_browser">Open with browser</string>
     <string-array name="blood_type">
         <item>A+</item>
         <item>B+</item>
@@ -9,14 +57,5 @@
         <item>B-</item>
         <item>AB-</item>
         <item>O-</item>
-    </string-array>
-    <string-array name="panch">
-
-        <item>Mountain View</item>
-        <item>Locality 2</item>
-        <item>Locality 3</item>
-        <item>Locality 4</item>
-
-
     </string-array>
 </resources>

@@ -109,7 +109,7 @@ public class OTP extends AppCompatActivity {
 
 
         @Override
-        public void onCodeSent(String s, PhoneAuthProvider.ForceResendingToken forceResendingToken) {
+        public void onCodeSent(@NonNull String s, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
             Toast.makeText(OTP.this,"CODE SENT! Please wait while we Auto-detect your OTP.",Toast.LENGTH_LONG).show();
 
             super.onCodeSent(s, forceResendingToken);

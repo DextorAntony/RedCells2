@@ -3,7 +3,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
@@ -14,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Verify your phone number"
+        android:text="@string/verify_your_phone_number"
         android:textAlignment="center"
         android:textColor="#3F51B5"
         android:textSize="22sp"
@@ -27,7 +26,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:text="RedCells will send an SMS message to verify your mobile number. Enter your county code and phone number:"
+        android:text="@string/redcells_will_send_an_sms_message_to_verify_your_mobile_number_enter_your_county_code_and_phone_number"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="16sp"
@@ -40,10 +39,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
-        android:hint="Awaiting OTP..."
+        android:hint="@string/awaiting_otp"
         android:inputType="number"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/phnum" />
+        app:layout_constraintTop_toBottomOf="@id/phnum"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/code"
@@ -54,7 +54,7 @@
 
 
         android:layout_marginTop="36dp"
-        android:hint="+ 91"
+        android:hint="@string/_91"
         android:inputType="number"
         android:maxLength="2"
         android:nextFocusLeft="@id/phnum"
@@ -63,7 +63,8 @@
         android:nextFocusForward="@id/phnum"
         app:layout_constraintEnd_toStartOf="@+id/phnum"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv" />
+        app:layout_constraintTop_toBottomOf="@+id/tv"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/phnum"
@@ -73,12 +74,13 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="36dp"
         android:layout_marginEnd="32dp"
-        android:hint="Mobile Number"
+        android:hint="@string/mobile_number"
         android:inputType="number"
         android:maxLength="10"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/code"
-        app:layout_constraintTop_toBottomOf="@+id/tv" />
+        app:layout_constraintTop_toBottomOf="@+id/tv"
+        android:autofillHints="" />
 
     <Button
         android:id="@+id/send"
@@ -89,22 +91,21 @@
 
         android:layout_marginBottom="24dp"
         android:background="#3F51B5"
-        android:text="Send Otp"
+        android:text="@string/send_otp"
         android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/t"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        android:text="Carrier charges may apply"
+        android:text="@string/carrier_charges_may_apply"
         android:textColor="@android:color/black"
-        android:textSize="15dp"
+        android:textSize="15sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/otpd" />
 

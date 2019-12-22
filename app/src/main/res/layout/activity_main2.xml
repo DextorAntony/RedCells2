@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorBackground"
     tools:context=".MainActivity2"
-    android:background="@color/colorBackground">
+    tools:ignore="Overdraw">
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swipe_refresh_layout"
@@ -18,30 +19,29 @@
             android:layout_height="wrap_content">
 
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/topheadelines"
-                    android:textColor="@color/colorTextTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textStyle="bold"
-                    android:text="Top Headlines"
-                    android:fontFamily="sans-serif-light"
-                    android:textSize="17sp"
                     android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
                     android:layout_marginTop="10dp"
-                    android:visibility="invisible"/>
+                    android:layout_marginRight="16dp"
+                    android:fontFamily="sans-serif-light"
+                    android:text="@string/top_headlines"
+                    android:textColor="@color/colorTextTitle"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:visibility="invisible" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerView"
-                    android:scrollbars="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                </androidx.recyclerview.widget.RecyclerView>
+                    android:layout_height="wrap_content"
+                    android:scrollbars="vertical" />
 
             </LinearLayout>
 
@@ -49,6 +49,6 @@
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
-    <include layout="@layout/error"/>
+    <include layout="@layout/error" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

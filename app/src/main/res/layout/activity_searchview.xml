@@ -2,7 +2,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_searchview"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -17,16 +16,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="19dp"
         android:layout_marginLeft="19dp"
         android:layout_marginEnd="18dp"
         android:layout_marginRight="19dp"
         android:layout_marginBottom="19dp"
-        android:text="NOTE: Information displayed should be used only for reasonable purposes."
+        android:text="@string/ji"
         android:textColor="#008000" />
 
     <ImageView
@@ -35,10 +32,11 @@
         android:layout_marginTop="20dp"
         app:srcCompat="@drawable/search"
         android:layout_centerHorizontal="true"
-        android:id="@+id/imageView4" />
+        android:id="@+id/imageView4"
+        android:contentDescription="@string/todo" />
 
     <TextView
-        android:text="Search Donor"
+        android:text="@string/search_donor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView11"
@@ -53,32 +51,29 @@
         android:layout_height="35dp"
         android:layout_alignTop="@+id/textView12"
         android:layout_marginStart="26dp"
-        android:layout_marginLeft="26dp"
         android:layout_toEndOf="@+id/textView12"
-        android:layout_toRightOf="@+id/textView12"
         android:entries="@array/blood_type" />
 
     <TextView
-        android:text="Blood Group:"
+        android:text="@string/blood_group"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="38dp"
         android:id="@+id/textView12"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
         android:layout_below="@+id/textView11"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
     <TextView
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView12"
+        android:layout_alignStart="@+id/textView12"
         android:layout_below="@+id/spinner3"
-        android:layout_marginLeft="1dp"
+        android:layout_marginStart="1dp"
         android:layout_marginTop="25dp"
 
-        android:text="Location:" />
+        android:text="@string/location" />
 
     <AutoCompleteTextView
         android:id="@+id/spinner4"
@@ -86,19 +81,16 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/textView13"
         android:layout_alignStart="@+id/spinner3"
-        android:layout_alignLeft="@+id/spinner3"
         android:layout_alignBottom="@+id/textView13"
         android:layout_marginEnd="-29dp"
-        android:layout_marginRight="-29dp"
         android:layout_marginBottom="-13dp"
         android:drawableEnd="@drawable/ic_gps_fixed_black_24dp"
-        android:drawableRight="@drawable/ic_gps_fixed_black_24dp"
-        android:hint="Enter you city"
+        android:hint="@string/enter_you_city"
         android:textColorHint="@android:color/black"
         android:textSize="14sp" />
 
     <Button
-        android:text="Search"
+        android:text="@string/search"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="29dp"
