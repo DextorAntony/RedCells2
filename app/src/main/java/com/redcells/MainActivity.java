@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                     Toast.makeText(MainActivity.this, "Donor Added", Toast.LENGTH_SHORT).show();
-                    Intent home = new Intent(MainActivity.this, MainActivity2.class);
+                    Intent home = new Intent(MainActivity.this, Home.class);
                     startActivity(home);
                     finish();
                 }
