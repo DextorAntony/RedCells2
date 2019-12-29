@@ -151,7 +151,7 @@ public class OTP extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
-                    Intent i = new Intent(getApplicationContext(),Home.class);
+                    Intent i = new Intent(getApplicationContext(),MainActivity.class);
                     startActivity(i);
                 }
                 else{
